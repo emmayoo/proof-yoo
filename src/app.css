@@ -1,1 +1,55 @@
 @import 'tailwindcss';
+
+@theme {
+	/* 공통 Primary Colors */
+	--color-primary: #3b82f6; /* blue-500 */
+	--color-secondary: #9333ea; /* purple-600 */
+	--color-success: #22c55e; /* green-500 */
+	--color-warning: #ebc200; /* yellow-500 */
+	--color-danger: #ef4444; /* red-500 */
+
+	/* Light Theme Colors */
+	--color-bg-primary: #f9fafb; /* gray-50 */
+	--color-bg-secondary: #ffffff; /* white */
+	--color-bg-tertiary: #f3f4f6; /* gray-100 */
+	--color-text-primary: #111827; /* gray-900 */
+	--color-text-secondary: #4b5563; /* gray-600 */
+	--color-text-tertiary: #9ca3af; /* gray-400 */
+	--color-border: #e5e7eb; /* gray-200 */
+}
+
+@layer base {
+	.dark {
+		/* Dark Theme Colors */
+		--color-bg-primary: #111827; /* gray-900 */
+		--color-bg-secondary: #1f2937; /* gray-800 */
+		--color-bg-tertiary: #374151; /* gray-700 */
+		--color-text-primary: #f3f4f6; /* gray-100 */
+		--color-text-secondary: #d1d5db; /* gray-300 */
+		--color-text-tertiary: #9ca3af; /* gray-400 */
+		--color-border: #374151; /* gray-700 */
+	}
+
+	body {
+		background-color: var(--color-bg-primary);
+		color: var(--color-text-primary);
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
+	}
+}
+
+/* accessibility */
+@layer utilities {
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+}
